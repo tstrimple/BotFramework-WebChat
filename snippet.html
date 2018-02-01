@@ -1,0 +1,69 @@
+
+<link href="https://raw.githubusercontent.com/tstrimple/BotFramework-WebChat/master/botchat.css" rel="stylesheet" />
+
+<style>
+#bot {
+    bottom: 20px;
+    left: 20px;
+    position: fixed;
+    width: 360px;
+    height: 600px;
+    border: 1px solid #469c7d;
+}
+
+.wc-header {
+    background-color: #69b499 !important;
+    cursor: pointer;
+}
+
+.wc-chatview-panel{
+	background-color: white
+}
+
+.wc-message-content img{
+	margin: 20px auto !important;
+	max-width: 64px !important;
+}
+
+</style>
+
+<div>
+    </div><div id="bot">
+</div>
+
+
+<div class="zls-small zls-btnmn zls-btrht show-chat" style="bottom: 20px; left: 20px; display: block; width: 200px;">
+    <div class="zls-btnsub zls-lftbtn">
+        <div id="zls_ctn_wrap" class="zlsf_btmn zlsgreen-btn" style="height: 33px;">
+            <div class="zls-chtmn" id="zlsimgcont">
+                <img class="zls-on-L1" id="zlsfltimg" src="https://img.zohostatic.com/salesiq/Jan_29_2018_3_https/images/spacer.gif" alt="chat-image" title="Offline" height="18" width="16">
+            </div>
+            <div class="zlslrgbtn-on-tit1">
+                <div style="color:#FFFFFF" id="zlstxtcnt" class="zls_fltxtcnt">Have a question?</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://raw.githubusercontent.com/tstrimple/BotFramework-WebChat/master/botchat.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+<script>
+    BotChat.App({
+        directLine: { secret: 'IdI6CPBMncU.cwA.5Zg.PuPzWy-3WpIeTOYfC7351MpQKz7pjUv8FAgsn8E42JE' },
+        user: { id: '' },
+        bot: { id: 'a371383a-ac4e-483a-b6cb-de3fbb1545eb' },
+        resize: 'detect'
+    }, document.getElementById('bot'));
+
+    $('#bot').hide();
+
+    $('.show-chat').click(function () {
+        $('#bot').show();
+        $('.show-chat').hide();
+    });
+
+    $('.wc-header').click(function () {
+        $('#bot').hide();
+        $('.show-chat').show();
+    });
+</script>
